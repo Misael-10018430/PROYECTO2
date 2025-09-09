@@ -1,0 +1,261 @@
+/*CUERPO PAGINA*/
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+}
+body {
+            font-family: sans-serif;
+            background-color: #D9D9D9;
+            line-height: 1.6;
+}
+/*TITULO PRINCIPAL*/
+.main-title { 
+    background-color: #181717;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 1px solid #2a2a2a;
+    transition: all 0.3s ease;
+}
+.main-title:hover {
+    background-color: #1f1f1f;
+}
+.main-title h1 {
+    font-size: 4.5em;
+    font-family: "Bungee", sans-serif;
+    margin: 0;
+    color: #fcfcfc;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+.main-title h1:hover {
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(252,252,252,0.3);
+}
+/*MENU*/
+.menu {
+    background: rgba(240, 240, 240, 0.08);
+    backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 0;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 2px;
+}
+.menu a {
+    display: block;
+    color: rgba(51, 51, 51, 0.8);
+    text-decoration: none;
+    padding: 16px 24px;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.35s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+.menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    opacity: 0;
+    transition: all 0.35s ease;
+    backdrop-filter: blur(15px);
+}
+.menu a:hover::before {
+    opacity: 1;
+}
+.menu a:hover {
+    color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+/*CAROUSEL PORTADA*/
+.carousel-container {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #D9D9D9;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+.carousel-container input[type="radio"] {
+    display: none;
+}
+.carousel-slides {
+    display: flex;
+    width: 600%; 
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+.slide {
+    width: calc(100% / 6);
+    height: 100%;
+    border: 1px solid #D9D9D9;
+    background: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D9D9D9;
+    font-size: 14px;
+    overflow: hidden; /* Oculta imagen que sobresalga */
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta imagen sin deformar */
+    border: none;
+    display: block;
+}
+#slide1:checked ~ .carousel-slides { transform: translateX(0%); }
+#slide2:checked ~ .carousel-slides { transform: translateX(-16.666%); }
+#slide3:checked ~ .carousel-slides { transform: translateX(-33.333%); }
+#slide4:checked ~ .carousel-slides { transform: translateX(-50%); }
+#slide5:checked ~ .carousel-slides { transform: translateX(-66.666%); }
+#slide6:checked ~ .carousel-slides { transform: translateX(-83.333%); }
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+.carousel-indicators label {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #666;
+    background: #D9D9D9;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+#slide1:checked ~ .carousel-indicators label[for="slide1"],
+#slide2:checked ~ .carousel-indicators label[for="slide2"],
+#slide3:checked ~ .carousel-indicators label[for="slide3"],
+#slide4:checked ~ .carousel-indicators label[for="slide4"],
+#slide5:checked ~ .carousel-indicators label[for="slide5"],
+#slide6:checked ~ .carousel-indicators label[for="slide6"] {
+    background: #666666;
+}
+/*CONTENIDO*/
+.container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            
+}
+.two-columns {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            
+}
+.column-text {
+            flex: 1;
+            
+}
+.column-image {
+            flex: 1;
+}
+.column-text p {
+            color: #000000;
+            margin-bottom: 15px;
+            text-align: justify;
+            
+}
+.column-text li {
+            margin-bottom: 15px;
+            text-align: justify;
+}
+.image-placeholder {
+            padding: 40px 40px;
+            text-align: center;
+            background-color: #D9D9D9;
+            color: #D9D9D9;
+            font-weight: normal;
+}
+.image-placeholder img {
+          border-radius: 15px; 
+          width: 100%;
+          height: auto;
+          transition: transform 0.3s ease;
+          /*animation: pulse 2s infinite;*/
+}
+        /*@keyframes pulse{
+            0%, 100% {transform: scale(1);}
+            50% {transform: scale(1.05);}
+        }*/
+.image-placeholder img:hover{
+            transform: scale(1.1);
+}
+/*PIE PAGINA**/
+.footer {
+    color: #f8f6f6;
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 1px solid #D9D9D9;
+    border-radius: 20px 20px 0 0;
+}
+.footer-content {
+    max-width: 500px; 
+    margin: 0 auto;
+    padding: 25px; 
+    text-align: center;
+    background-color: #f0f0f0;  
+    border-radius: 12px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);  
+}
+.footer-content p {
+    margin-bottom: 10px;
+    color: #1a1919;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;  
+    color: #181818;
+    max-width: 500px;  
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 768px) {
+.two-columns {
+                flex-direction: column;
+}
+.menu ul {
+                flex-direction: column;
+}
+.menu a {
+                border-right: none;
+                border-bottom: 1px solid #bbb;
+}
+.main-title h1 {
+                font-size: 2em;
+ }
+.carousel-container {
+                width: 90%;
+                height: 200px;
+            }
+}
